@@ -216,12 +216,12 @@ document.getElementById("tinhtienthue").onclick = function () {
 function genderChanged(obj) {
   var soKetNoi = document.getElementById("soketnoi");
   var value = obj.value;
+
   if (value === "doanhnghiep") {
     soKetNoi.innerHTML = `<input id="ketnoidoanhnghiep" type="number" class="col-4 w-100 form-control" placeholder="Số kết nối" />`;
   } else {
     soKetNoi.innerHTML = "";
   }
-  return soKetNoi.innerHTML;
 }
 
 function phiXuLyHoaDon(khachHang) {
@@ -250,8 +250,7 @@ document.getElementById("btnb4").onclick = function () {
   var khachHang = document.getElementById("gender").value;
   var maKhachHang = document.getElementById("makhachhang").value;
   var soKenhCaoCap = document.getElementById("sokenhcaocap").value * 1;
-  var ketNoiDoanhNghiep =
-    document.getElementById("ketnoidoanhnghiep").value * 1;
+
   var phiXuLyHoadon = phiXuLyHoaDon(khachHang);
   var phiDichvu = phiDichVu(khachHang);
   var kenhCaocap = kenhCaoCap(khachHang);
@@ -260,6 +259,8 @@ document.getElementById("btnb4").onclick = function () {
   if (khachHang == "nhadan") {
     tinhTienCap = phiXuLyHoadon + phiDichvu + kenhCaocap * soKenhCaoCap;
   } else {
+    var ketNoiDoanhNghiep =
+      document.getElementById("ketnoidoanhnghiep").value * 1;
     tinhTienCap =
       phiXuLyHoadon +
       kenhCaocap * soKenhCaoCap +
