@@ -92,10 +92,45 @@
             <p class="alert alert-success" id="ketqua3"></p>
         </div>
     </div>
+    <hr>
+    <br>
+    <!-- BÀI TẬP 4 -->
+    <h3>Bài tập 4</h3>
+    <p>Tính tiền cáp</p>
+    <div class="w-50 row">
+        <div class="col-4 form-group">
+            <select id="gender" onchange="genderChanged(this)">
+                <option value="">Chọn loại khách hàng</option>
+                <option value="nhadan">Nhà Dân</option>
+                <option value="doanhnghiep">Doanh Nghiệp</option>
+            </select>
+        </div>
+        <div class="col-4 form-group">
+            <input type="text" id="makhachhang" class="form-control" placeholder="Nhập mã khách hàng">
+        </div>
+        <div class="col-4 form-group">
+            <input type="number" id="sokenhcaocap" class="form-control" placeholder="Số kênh cao cấp">
+        </div>
+        <div class="form-group w-100">
+            <p id="soketnoi"></p>
+        </div>
+        <div class="w-100 text-center">
+            <button id="btnb4" class="btn btn-outline-danger">Tính tiền cáp</button>
+        </div>
+        <div class="w-100">
+            <p id="ketqua4" class="alert alert-success mt-3"></p>
+        </div>
+    </div>
+    <script language="javascript">
+        // Hàm xử lý khi thẻ select thay đổi giá trị được chọn
+        // obj là tham số truyền vào và cũng chính là thẻ select
+        function genderChanged(obj) {
 
+        }
+    </script>
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- // < !--jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

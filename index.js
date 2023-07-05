@@ -211,3 +211,62 @@ document.getElementById("tinhtienthue").onclick = function () {
   ketQua3 = `Họ Tên:${hoTen3}-Tiền Thuế thu nhập cá nhân:${tienThue.toLocaleString()}VNĐ`;
   document.getElementById("ketqua3").innerHTML = ketQua3;
 };
+
+// BÀI 4
+function genderChanged(obj) {
+  var soKetNoi = document.getElementById("soketnoi");
+  var value = obj.value;
+  if (value === "doanhnghiep") {
+    soKetNoi.innerHTML = `<input id="ketnoidoanhnghiep" type="number" class="col-4 w-100 form-control" placeholder="Số kết nối" />`;
+  } else {
+    soKetNoi.innerHTML = "";
+  }
+  return soKetNoi.innerHTML;
+}
+
+function phiXuLyHoaDon(khachHang) {
+  if (khachHang == "nhadan") {
+    return 4.5;
+  } else {
+    return 15;
+  }
+}
+function phiDichVu(khachHang) {
+  if (khachHang == "nhadan") {
+    return 20.5;
+  } else {
+    return 75;
+  }
+}
+function kenhCaoCap(khachHang) {
+  if (khachHang == "nhadan") {
+    return 7.5;
+  } else if (khachHang == "doanhnghiep") {
+    return 50;
+  }
+}
+
+document.getElementById("btnb4").onclick = function () {
+  var khachHang = document.getElementById("gender").value;
+  var maKhachHang = document.getElementById("makhachhang").value;
+  var soKenhCaoCap = document.getElementById("sokenhcaocap").value * 1;
+  var ketNoiDoanhNghiep =
+    document.getElementById("ketnoidoanhnghiep").value * 1;
+  var phiXuLyHoadon = phiXuLyHoaDon(khachHang);
+  var phiDichvu = phiDichVu(khachHang);
+  var kenhCaocap = kenhCaoCap(khachHang);
+  var tinhTienCap = 0;
+  // Tính Tiền cáp
+  if (khachHang == "nhadan") {
+    tinhTienCap = phiXuLyHoadon + phiDichvu + kenhCaocap * soKenhCaoCap;
+  } else {
+    tinhTienCap =
+      phiXuLyHoadon +
+      kenhCaocap * soKenhCaoCap +
+      phiDichvu +
+      (ketNoiDoanhNghiep - 10) * 5;
+  }
+  document.getElementById(
+    "ketqua4"
+  ).innerHTML = `Mã khách hàng:${maKhachHang};Tiền Cáp:${tinhTienCap.toLocaleString()}$`;
+};
