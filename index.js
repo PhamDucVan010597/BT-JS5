@@ -261,11 +261,15 @@ document.getElementById("btnb4").onclick = function () {
   } else {
     var ketNoiDoanhNghiep =
       document.getElementById("ketnoidoanhnghiep").value * 1;
-    tinhTienCap =
-      phiXuLyHoadon +
-      kenhCaocap * soKenhCaoCap +
-      phiDichvu +
-      (ketNoiDoanhNghiep - 10) * 5;
+    if (ketNoiDoanhNghiep <= 10) {
+      tinhTienCap = phiXuLyHoadon + kenhCaocap * soKenhCaoCap + 75;
+    } else {
+      tinhTienCap =
+        phiXuLyHoadon +
+        kenhCaocap * soKenhCaoCap +
+        phiDichvu +
+        (ketNoiDoanhNghiep - 10) * 5;
+    }
   }
   document.getElementById(
     "ketqua4"
